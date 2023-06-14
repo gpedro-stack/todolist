@@ -1,0 +1,17 @@
+
+
+<div class=" container-sm mt-5 border border-primary border-2 rounded-3 bg-dark text-center ">
+  <h2 class="mt-2 text-light">Lists</h2>
+  <p>
+<% @lists.each do |list| %>
+
+  <%= link_to list.day, list, class: "pe-4" %>
+  <%= link_to "Edit List", edit_dolist_path(list), class: "pe-4" %>
+    <%= link_to "Delete List", dolist_path(list) ,data: {turbo_method: :delete, turbo_confirm: "Are you sure"}, class: "pe-4" %>
+      <br>
+
+
+<% end %>
+
+  </p>
+</div>

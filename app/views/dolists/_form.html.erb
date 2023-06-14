@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Index page</title>
+</head>
+<body class=" bg-secondary">
+<%= render 'dolists/navbar' %>
+<div class="container-sm mt-5 border border-primary border-2 rounded-3 bg-dark text-center">
+<%= form_with model: list do |form| %>
+
+    <div>
+        <h2 class="text-light mt-2">Creating List</h2>
+        <%= form.label :day , class:"text-light mt-3"%>
+        <br><%= form.text_field :day, class: "border border-primary border-3 border-rounded rounded-3 mt-3" %>
+        <% list.errors.full_messages_for(:day).each do |message| %>
+            <div>
+                <%= message %>
+            </div>
+        <% end %>
+    </div>
+
+    <%= form.submit "Create", class:"btn btn-primary mb-4 mt-4" %>
+
+<% end %>
+</div>
+<%= render "dolists/footer" %>
+</body>
+</html>
+
+

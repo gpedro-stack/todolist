@@ -1,0 +1,11 @@
+
+<div class="container-sm mt-5 border border-primary border-2 rounded-3 bg-dark text-center">
+
+  <article class="text-light">
+    <h2 class="mt-2">Hello <%= current_user.email %></h2>
+    <p class="pt-3 px-3">Since you are logged in, you can now create Lists and it's tasks. </p>
+    <p class="pt-1 px-3"><%= link_to "New List", new_dolist_path, class: "btn btn-primary mt-2" %></p>
+  </article>
+
+
+</div>

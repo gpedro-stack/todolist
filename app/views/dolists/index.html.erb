@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Index page</title>
+</head>
+<body class=" bg-secondary">
+
+<%= render "navbar" %>
+
+<% if !user_signed_in? %>
+
+  <%= render 'article' %>
+<% else %>
+
+  <%= render 'loggedArticle' %>
+
+<% end %>
+
+
+
+<% if user_signed_in? %>
+
+
+  <%= render "dolists/lists" %>
+
+<% end %>
+
+<%= render 'dolists/footer' %>
+
+
+</body>
+</html>
+
+
+

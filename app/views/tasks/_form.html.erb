@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Index page</title>
+</head>
+<body class=" bg-secondary">
+<div class=" container-sm mt-5 border border-primary border-2 rounded-3 bg-dark text-center ">
+
+<h2 class="text-light mt-2">Add a Task</h2>
+
+<%= form_with model: [@list, @list.tasks.build] do |form| %>
+
+
+  <p>
+    <%= form.label :activity, class: 'text-light  mt-3 ' %>
+    <br>
+    <%= form.text_field :activity, class: "border border-primary border-3 border-rounded rounded-3 mt-2" %>
+  </p>
+
+  <br>
+
+  <p>
+    <%= form.label :status, class: 'text-light mb-1 ' %>
+    <br>
+    <%= form.select :status, ['Completed', 'Incomplete'], selected: 'Incomplete', class:"mb-5" %>
+
+  </p>
+
+
+
+  <p>
+    <%= form.submit "Create Task", class:"btn btn-primary mb-4 mt-3" %>
+  </p>
+
+<% end %>
+
+</div>
+</body>
+</html>
